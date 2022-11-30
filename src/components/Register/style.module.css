@@ -1,0 +1,30 @@
+
+input {
+    border: 0;
+    font: inherit;
+  }
+  input::placeholder {
+    color: #7e8ba3;
+  }
+  
+  .register {
+    font-size: large;
+    box-shadow: 0 0 250px #000;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: rgb(48, 132, 104);
+  }
+  .register input {
+    border: 1px solid #242c37;
+    border-radius: 999px;
+    background-color: transparent;
+    text-align: center;
+  }
+  .register input[type="email"], register input[type="password"] {
+    background-repeat: repeat;
+    background-size: 1.5rem;
+    background-position: 1rem 50%;
+  }
+  
+  
+  

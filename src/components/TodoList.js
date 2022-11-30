@@ -6,13 +6,13 @@ const TodoList = ({todos, deleteTodo}) => {
   if(!todos.length) {
     return(
       <Badge colorScheme='cyan' p='4' borderRadius='lg'>
-        No Todos, yay!!!
+      no todos !!
       </Badge>
     );
   }
   
   return (
-    <VStack divider={<StackDivider />} borderWidth='2px' borderColor='gray.100' borderRadius='lg' padding='4' w='100%' maxW={{base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw'}} alignItems='stretch'>
+    <VStack divider={<StackDivider />} borderWidth='px' borderColor='gray.100' borderRadius='lg' padding='4' w='100%' maxW={{base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw'}} alignItems='stretch'>
       {todos.map(todo => (
         <HStack key={todo.id}>
           <Text>{todo.body}</Text>
