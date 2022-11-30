@@ -3,7 +3,7 @@ import { DataProvider } from "./context";
 
 
 function App() {
-  
+ console.log("jkj")
   return (
     <DataProvider>
     <Layout />
