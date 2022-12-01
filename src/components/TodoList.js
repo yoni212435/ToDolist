@@ -10,7 +10,7 @@ const TodoList = ({todos, deleteTodo}) => {
       </Badge>
     );
   }
-  
+  console.log({todos});
   return (
     <VStack divider={<StackDivider />} borderWidth='px' borderColor='gray.100' borderRadius='lg' padding='4' w='100%' maxW={{base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw'}} alignItems='stretch'>
       {todos.map(todo => (

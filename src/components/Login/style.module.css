@@ -37,3 +37,6 @@ input {
     font-size: 22px
   }
   
+  .icon{
+    position: Absolute; top: 20px; right: 20px; 
+  }

@@ -1,3 +1,5 @@
+import { VStack, IconButton, Box, Heading, useColorMode } from '@chakra-ui/react';//ספריות עיצוב
+import { FaSun, FaMoon } from "react-icons/fa";
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import styles from './style.module.css'
@@ -17,8 +19,10 @@ function Login() {
     })
       .then((response) => {
         console.log("res:", response.data);
-        DataContext.setName(response.data.token.user)
-        localStorage.token = response.data.token;
+        DataContext.setName(response.data.token.name)
+        localStorage.token = JSON.stringify(response.data.token.token);
+        localStorage.email = email;
+        
         if (response.data.token) {
           navigate("/main")
         }
@@ -43,10 +47,19 @@ function Login() {
     navigate("/register")
   };
   const navigate = useNavigate()
+  const {colorMode, toggleColorMode} = useColorMode();
 
   return (
+    <div>
+<div className={styles.icon} >
+
+      <IconButton icon={colorMode === 'light' ? < FaMoon/> : < FaSun/>} isRound='true' size='lg' alignSelf='flex-end' onClick={toggleColorMode} />
+</div>
+    <VStack p='4'>
+      <Box>
     <form className={styles.login} onSubmit={onSubmit}>
-      <h1 style={{fontSize:"50px", marginBottom:"20px"}}>welcome to ToDoList</h1>
+      {/* <h1 style={{fontSize:"50px", marginBottom:"20px"}}>welcome to ToDoList</h1> */}
+      <Heading mb='8' fontWeight='extrabold' size='2xl' bgGradient='linear(to-r, cyan.400, purple.400, pink.400)' bgClip='text'>welcome to ToDoList</Heading> 
       <div className={styles.form_field}>
         <input className={styles.inputEmail} type="email" name="email" placeholder="info@mailaddress.com" onChange={onChange} />
         {isInputValid && <span>✅</span>}
@@ -64,6 +77,9 @@ function Login() {
         <button disabled={!isDisabled} onClick={toRegister} > Register </button>
       </div>
     </form>
+      </Box>
+    </VStack>
+    </div>
   );
 }
 

@@ -1,3 +1,5 @@
+import { VStack, IconButton, Box, Heading, useColorMode } from '@chakra-ui/react';//ספריות עיצוב
+import { FaSun, FaMoon } from "react-icons/fa";
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import styles from './style.module.css'
@@ -57,10 +59,20 @@ function Register() {
     };
 
   const navigate = useNavigate()
+  const {colorMode, toggleColorMode} = useColorMode();
 
   return (
+    <div>
+      <div className={styles.icon} >
+
+<IconButton icon={colorMode === 'light' ? < FaMoon/> : < FaSun/>} isRound='true' size='lg' alignSelf='flex-end' onClick={toggleColorMode} />
+</div>
+<VStack p='4'>
+      <Box>
     <form className={styles.register} onSubmit={onSubmit}>
-      <h1 className={styles.headline} >יאללה תירשם כבר</h1>
+      {/* <h1 className={styles.headline} >יאללה תירשם כבר</h1> */}
+      <Heading mb='8' fontWeight='extrabold' size='2xl' bgGradient='linear(to-r, cyan.400, purple.400, pink.400)' bgClip='text'>welcome to ToDoList</Heading> 
+
       <div className={styles.form_field}>
         <input type="text" name="fname" placeholder="first name" onChange={onChange} />
         {isInputValid && <span>✅</span>}
@@ -79,6 +91,7 @@ function Register() {
       </div>
       <br />
       <br />
+      
       <div className={styles.form_field}>
 
         <input type="password" name="password" placeholder="••••password••••" onChange={onChange3} />
@@ -87,6 +100,9 @@ function Register() {
       <br />
       <button disabled={isDisabled}>Register</button>
     </form>
+    </Box>
+    </VStack>
+    </div>
   );
 }
 

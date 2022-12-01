@@ -31,5 +31,7 @@ input {
     margin-bottom: 1.3rem;
   }
   
-  
+  .icon{
+    position: Absolute; top: 20px; right: 20px; 
+  }
   
