@@ -25,6 +25,11 @@ input {
     background-size: 1.5rem;
     background-position: 1rem 50%;
   }
+
+  .headline{
+    font-size: 3rem;
+    margin-bottom: 1.3rem;
+  }
   
   
   

@@ -46,7 +46,7 @@ function Login() {
 
   return (
     <form className={styles.login} onSubmit={onSubmit}>
-      <h1 className='hg'>welcome to ToDoList</h1>
+      <h1 style={{fontSize:"50px", marginBottom:"20px"}}>welcome to ToDoList</h1>
       <div className={styles.form_field}>
         <input className={styles.inputEmail} type="email" name="email" placeholder="info@mailaddress.com" onChange={onChange} />
         {isInputValid && <span>✅</span>}
@@ -55,7 +55,7 @@ function Login() {
       <br />
       <div className={styles.form_field}>
 
-        <input type="password" name="password" placeholder="••••password••••" onChange={onChange2} />
+        <input   type="password" name="password" placeholder="••••password••••" onChange={onChange2} />
         {isInput2Valid && <span>✅</span>}
       </div>
       <br />

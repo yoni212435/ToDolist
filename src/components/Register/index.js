@@ -60,7 +60,7 @@ function Register() {
 
   return (
     <form className={styles.register} onSubmit={onSubmit}>
-      <h1  >יאללה תירשם כבר</h1>
+      <h1 className={styles.headline} >יאללה תירשם כבר</h1>
       <div className={styles.form_field}>
         <input type="text" name="fname" placeholder="first name" onChange={onChange} />
         {isInputValid && <span>✅</span>}
